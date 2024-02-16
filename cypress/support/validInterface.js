@@ -1,8 +1,10 @@
 Cypress.Commands.add('restPaises', () => {
-    cy.visit('/')
+    cy.visit('https://restcountries.com/')
     cy.get('.content > :nth-child(1)').should('exist')
     
 })
+
+
 
 Cypress.Commands.add('projeto', () => {
     cy.contains('This project is inspired on restcountries.eu by Fayder Florez. Although the original project has now moved to a subscription base API, this project is still Open Source and Free to use.')
