@@ -15,7 +15,7 @@ jobs:
         browser: [chrome]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4 # Atualize para a versão mais recente que suporta Node.js  20
+        uses: actions/checkout@v3 # Atualize para a versão mais recente que suporta Node.js  20
       - name: Install modules
         run: npm install
       - name: Run end-to-end black box tests 🧪
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Install modules
         run: npm install
       - name: Run white box tests 🧪
