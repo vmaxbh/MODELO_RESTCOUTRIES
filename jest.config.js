@@ -9,11 +9,7 @@ module.exports = {
   
   // Extensões de arquivos de teste que o Jest procurará
   testMatch: ["**/*.test.js"],
-  
-  // Relatório de cobertura de código
-  collectCoverage: false,
-  coverageDirectory: `<rootDir>/coverage/${getDateTime()}`,
-  
+   
   // Lista de reporters utilizados
   reporters: [
     "default",
