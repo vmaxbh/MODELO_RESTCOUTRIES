@@ -4,8 +4,6 @@ Cypress.Commands.add('restPaises', () => {
     
 })
 
-
-
 Cypress.Commands.add('projeto', () => {
     cy.contains('This project is inspired on restcountries.eu by Fayder Florez. Although the original project has now moved to a subscription base API, this project is still Open Source and Free to use.')
     cy.contains('The structure of V2 has been reverted to its original form from the Original Project to maintain compatibility.')
