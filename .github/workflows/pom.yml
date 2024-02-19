@@ -26,6 +26,8 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           command: npm run cypress:run
+      - name: Check if cypress/videos directory exists
+        run: if [ ! -d "cypress/videos" ]; then mkdir -p cypress/videos; fi
       - name: List Cypress videos
         run: ls -la cypress/videos
       - name: Upload Cypress videos
