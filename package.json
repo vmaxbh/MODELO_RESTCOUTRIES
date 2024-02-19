@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "vue-cli-service build",
     "test": "cypress run && npx jest",
     "cypress": "cypress run",
     "cypress:open": "cypress open",
