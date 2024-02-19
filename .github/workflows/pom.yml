@@ -10,11 +10,9 @@ jobs:
   cypress-tests-Modelo-Blackbox:
     runs-on: ubuntu-22.04
     strategy:
-      # não falhe todo o matrix em caso de falha
-      fail-fast: false
       matrix:
-        # execute cópias do job atual em paralelo
-        containers: [1,  2,  3,  4,  5]
+        os: [ubuntu-latest]
+        browser: [chrome]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -27,16 +25,14 @@ jobs:
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          group: "UI-Chrome"
-      - name: Download the build folder
-        uses: actions/download-artifact@v4
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          record: true
-          parallel: true
-          group: "UI-Chrome"
           command: npm run cypress:run
+      - name: List Cypress videos
+        run: ls -la cypress/videos
+      - name: Upload Cypress videos
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-videos
+          path: cypress/videos/*.mp4
   cypress-tests-Modelo-Whitebox:
     runs-on: ubuntu-22.04
     steps:
