@@ -25,7 +25,7 @@ jobs:
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          command: npm run cypress:run -- --record
+          command: npm run cypress:run -- --record false
       - name: List Cypress videos
         run: ls -la cypress/videos
       - name: Upload Cypress videos
