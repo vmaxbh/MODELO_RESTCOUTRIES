@@ -35,7 +35,7 @@ describe('Testes da API', () => {
     console.log('Status Code:', response.statusCode);
     console.log('Array de Países:', Array.isArray(response.body));
     console.log('Número de Países:', response.body.length);
-    expect(response.statusCode).toBe(201);
+    expect(response.statusCode).toBe(200);
     expect(Array.isArray(response.body)).toBe(true);
     expect(response.body.length).toBeGreaterThan(0);
     
