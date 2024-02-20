@@ -57,7 +57,7 @@ Cypress.Commands.add('campoPesquisaEUA', () => {
     cy.get('tbody > :nth-child(2) > .ng-binding').should('contain', 'USA');
     cy.get(':nth-child(3) > td').should('contain', 'USDUSNUSS');
     cy.get(':nth-child(4) > td').should('contain', '1');
-    cy.get(':nth-child(5) > td').should('contain', 'eng');
+    cy.get(':nth-child(5) > td1').should('contain', 'eng');
     cy.wait(1000);
     console.log('Pesquisa para Estados Unidos concluída com sucesso!');
 });
