@@ -12,7 +12,7 @@
     "cypress:repository": "npx cypress run --spec cypress/e2e/repository.cy.js",
     "cypress:nav": "npx cypress run --spec cypress/e2e/nav.cy.js",
     "jest": "npx jest",
-    "cypress:run": "cypress run --record true",
+    "cypress:run": "cypress run --record true --reporter mochawesome",
     "start": "node server.js"
   },
   "keywords": [],
