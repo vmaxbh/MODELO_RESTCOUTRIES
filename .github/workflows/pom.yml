@@ -33,12 +33,25 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos/*.mp4
-  cypress-tests-Modelo-Whitebox:
+  Jest-tests-Modelo-Whitebox:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install modules
         run: npm install
+      - name: Install global dependencies
+        run: |
+          npm install -g jest@29.7.0
+          npm install -g supertest@6.3.4
+          npm install -g jest-html-reporters@3.1.7
+          npm install -g moment@2.29.4
       - name: Run white box tests 🧪
         run: npm run jest
+      - name: Generate Jest HTML report
+        run: npx jest --reporters="default" --reporters="jest-html-reporters"
+      - name: Upload Jest HTML report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-html-report
+          path: ./jest/reports/
