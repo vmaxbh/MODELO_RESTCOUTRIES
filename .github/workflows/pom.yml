@@ -15,7 +15,7 @@ jobs:
         browser: [chrome]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install modules
         run: npm install
       - name: Install global dependencies 
@@ -37,12 +37,12 @@ jobs:
       - name: List Cypress videos
         run: ls -la cypress/videos
       - name: Upload Cypress videos
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-videos
           path: cypress/videos/*.mp4
       - name: Upload Cypress HTML report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-html-report
           path: cypress/reports/*.html    
