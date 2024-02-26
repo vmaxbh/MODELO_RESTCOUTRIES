@@ -1,8 +1,9 @@
 const request = require('supertest');
+const app = 'https://restcountries.com';
 
 describe('Testes da API', () => {
   test('Deve retornar uma lista de países', async () => {
-    const response = await request('https://restcountries.com').get('/v3.1/all');
+    const response = await request(app).get('/v3.1/all');
     console.log('Response:', response.body);
     console.log('Status Code:', response.statusCode);
     console.log('Array de Países:', Array.isArray(response.body));
@@ -14,7 +15,7 @@ describe('Testes da API', () => {
 
   test('Deve retornar informações detalhadas de um país específico', async () => {
     const countryName = 'brazil';
-    const response = await request('https://restcountries.com').get(`/v3.1/name/${countryName}`);
+    const response = await request(app).get(`/v3.1/name/${countryName}`);
     console.log('Response:', response.body);
     console.log('Status Code:', response.statusCode);
     console.log('Número de Países:', response.body.length);
@@ -30,7 +31,7 @@ describe('Testes da API', () => {
   });
 
   test('Deve retornar informações sobre todos os países', async () => {
-    const response = await request('https://restcountries.com').get('/v3.1/all');
+    const response = await request(app).get('/v3.1/all');
     console.log('Response:', response.body);
     console.log('Status Code:', response.statusCode);
     console.log('Array de Países:', Array.isArray(response.body));
@@ -43,7 +44,7 @@ describe('Testes da API', () => {
 
   test('Deve retornar informações corretas ao pesquisar por um país com um nome incompleto', async () => {
     const countryName = 'br';
-    const response = await request('https://restcountries.com').get(`/v3.1/name/${countryName}`);
+    const response = await request(app).get(`/v3.1/name/${countryName}`);
     console.log('Response:', response.body);
     console.log('Status Code:', response.statusCode);
     console.log('Array de Países:', Array.isArray(response.body));
@@ -57,7 +58,7 @@ describe('Testes da API', () => {
 
   test('Deve retornar informações corretas ao pesquisar por um país com um código de país específico', async () => {
     const countryCode = 'BR';
-    const response = await request('https://restcountries.com').get(`/v3.1/alpha/${countryCode}`);
+    const response = await request(app).get(`/v3.1/alpha/${countryCode}`);
     console.log('Response:', response.body);
     console.log('Status Code:', response.statusCode);
     console.log('Array de Países:', Array.isArray(response.body));
@@ -73,6 +74,22 @@ describe('Testes da API', () => {
     expect(response.body[0]).toHaveProperty('population');
     
   });
+
+  test('Deve retornar informações de um país pela moeda', async () => {
+    const currency = 'cop';
+    const response = await request(app).get(`/v3.1/currency/${currency}`);
+    expect(response.statusCode).toBe(200);
+    expect(Array.isArray(response.body)).toBe(true);
+    expect(response.body).toHaveLength(1);
+    expect(response.body[0]).toHaveProperty('currencies.COP');
+  });
+
+  test('Deve retornar informações de um país pela tradução', async () => {
+    const translation = 'germany';
+    const response = await request(app).get(`/v3.1/translation/${translation}`);
+    expect(response.statusCode).toBe(200);
+  });
+
 });
 
 
