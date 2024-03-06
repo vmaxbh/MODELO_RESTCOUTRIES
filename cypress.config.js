@@ -11,10 +11,11 @@ module.exports = defineConfig({
   reporter: "mochawesome",
   reporterOptions: {
     reportDir: `cypress/reports/${dateTime}`,
+    reportFilename: "[name]-report",
     quiet: true,
     overwrite: false,
     html: true,
-    json: true,
+    json: false,
   },
   screenshotsFolder: `cypress/reports/${dateTime}/evidências`,
   chromeWebSecurity: false,
