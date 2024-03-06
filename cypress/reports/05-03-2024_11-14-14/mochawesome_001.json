@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-05T14:15:31.755Z",
+    "end": "2024-03-05T14:16:08.331Z",
+    "duration": 36576,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7b56d1f2-35d0-4034-93e0-62ba4498cad1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\validInterface.cy.js",
+      "file": "cypress\\e2e\\validInterface.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "09cde715-f22b-4a5f-9ce4-617033219a1a",
+          "title": "Área do Projeto validações de Informações da Interface",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Confirmações de informações do Projeto",
+              "fullTitle": "Área do Projeto validações de Informações da Interface Confirmações de informações do Projeto",
+              "timedOut": null,
+              "duration": 22100,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.projeto();\ncy.fields();\ncy.endpoits();",
+              "err": {},
+              "uuid": "30283116-d53b-4784-a8b4-654f308782ee",
+              "parentUUID": "09cde715-f22b-4a5f-9ce4-617033219a1a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirmações de informações do Projeto",
+              "fullTitle": "Área do Projeto validações de Informações da Interface Confirmações de informações do Projeto",
+              "timedOut": null,
+              "duration": 10959,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contributing();\ncy.donations();",
+              "err": {},
+              "uuid": "5587f6e0-9c6c-4b95-af79-f641d01e15e2",
+              "parentUUID": "09cde715-f22b-4a5f-9ce4-617033219a1a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "30283116-d53b-4784-a8b4-654f308782ee",
+            "5587f6e0-9c6c-4b95-af79-f641d01e15e2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/05-03-2024_11-14-14",
+        "quiet": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
